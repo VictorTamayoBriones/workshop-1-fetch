@@ -10,10 +10,20 @@ const createCard = (img, name, price) =>{
     card.setAttribute('class', 'card');
     image.setAttribute('src', `https://platzi-avo.vercel.app/${img}`);
     title.textContent = name;
-    avocadoPrice.textContent = price;
+    avocadoPrice.textContent = formatPrice(price);
 
     card.append(image, title, avocadoPrice);
     appNode.appendChild(card);
+}
+
+const formatPrice = (price)=>{
+
+    const newPrice = new window.Intl.NumberFormat("en-EN", {
+        style: "currency",
+        currency: "USD",
+    }).format(price);
+
+    return newPrice;
 }
 
 //conectarnos al server

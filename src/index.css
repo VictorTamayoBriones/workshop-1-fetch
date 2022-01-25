@@ -33,4 +33,5 @@ body{
     border: solid 1px teal;
     border-radius: 5px;
     overflow: hidden;
+    padding: 5px;
 }
