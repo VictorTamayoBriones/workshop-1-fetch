@@ -10,6 +10,7 @@
 
 body{
     width: 100%;
+    background: rgb(10, 119, 74);
 }
 
 .text{
@@ -17,6 +18,8 @@ body{
     text-align: center;
     margin-bottom: 20px;
     font-size: 30px;
+    color: rgb(228, 231, 54);
+    letter-spacing: 2px;
 }
 
 .app{
@@ -29,27 +32,26 @@ body{
 }
 
 .card{
-    width: 40%;
+    width: 30%;
     display: flex;
     flex-wrap: wrap;
-    border: solid 1px teal;
     border-radius: 5px;
     overflow: hidden;
     padding: 12px;
-    background: rgb(80, 129, 76);
-    color: #fff;
+    background: #b0e6bd8c;
+    color: #eeecec;
     max-height: max-content;
 }
 
 .card img{
-    border-radius: 50%;
-    width: 80%;
+    border-radius: 100%;
+    width: 50%;
     margin: 20px auto;
 }
 
 .card .desc{
     width: 45%;
-    max-height: 250px;
+    max-height: 150px;
     overflow: scroll;
     display: flex;
     flex-direction: column;
