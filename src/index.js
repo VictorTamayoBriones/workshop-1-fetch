@@ -1,18 +1,29 @@
 const apiUrl = "https://platzi-avo.vercel.app/api/avo";
 const appNode = document.querySelector('#app');
 
-const createCard = (img, name, price) =>{
+const createCard = (img, name, price, description, taste) =>{
     const card = document.createElement('div');
+    const cardMain = document.createElement('div');
+    const cardDesc = document.createElement('div');
     const image = document.createElement('img');
     const title = document.createElement('h2');
     const avocadoPrice = document.createElement('p');
-    
+    const describe = document.createElement('p');
+    const avocadoTaste = document.createElement('p');
+
     card.setAttribute('class', 'card');
+    cardDesc.setAttribute('class', 'desc');
+    cardMain.setAttribute('class', 'cardMain');
     image.setAttribute('src', `https://platzi-avo.vercel.app/${img}`);
     title.textContent = name;
     avocadoPrice.textContent = formatPrice(price);
+    describe.textContent = description
+    avocadoTaste.textContent = `Taste: ${taste}`;
 
-    card.append(image, title, avocadoPrice);
+    card.append(cardMain, cardDesc);
+    cardMain.append(image, title, avocadoPrice)
+    cardDesc.append(description, avocadoTaste);
+
     appNode.appendChild(card);
 }
 
@@ -33,8 +44,8 @@ window.fetch(apiUrl)
     
     //JSON -> DATA -> RENDERIZAR LA INFO
     .then((resJson)=>{
-        resJson.data.forEach(({name, image, price}) => {
+        resJson.data.forEach(({name, image, price, attributes:{description, taste}}) => {
             //Crear una card con la imagen, titulo y precio
-            createCard(image, name, price);
+            createCard(image, name, price, description, taste);
         });
     })
