@@ -1,5 +1,5 @@
 { 
-  "homepage": "https://VictorTamayoBriones.github.io/workshop1-fetch",
+  "homepage": "https://VictorTamayoBriones.github.io/workshop-1-fetch",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
